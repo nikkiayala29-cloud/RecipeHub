@@ -1,221 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>RecipeHub</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link
-href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <title>RecipeHub</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="app">
+  <header>
+    <h1>🍽 RecipeHub</h1>
 
-<!-- HOME -->
+    <input type="text" id="searchInput" placeholder="Search recipes...">
+  </header>
 
-<section id="homeScreen" class="screen active">
+  <main>
 
-<header class="hero">
+    <section id="recipeContainer"></section>
 
-<h1>Discover</h1>
+  </main>
 
-<p>Find your next favorite recipe</p>
+  <!-- MODAL -->
+  <div id="recipeModal" class="modal hidden">
+    <div class="modal-content">
+      <span id="closeModal">X</span>
+      <div id="modalBody"></div>
+    </div>
+  </div>
 
-</header>
-
-<div class="search-container">
-
-<input
-type="text"
-id="searchInput"
-placeholder="Search recipes...">
-
-</div>
-
-<h3 class="section-title">
-FEATURED CATEGORY
-</h3>
-
-<div class="featured-card">
-
-<div class="featured-overlay">
-
-<h2>Filipino Food</h2>
-
-</div>
-
-</div>
-
-<h3 class="section-title">
-ALL CATEGORIES
-</h3>
-
-<div class="categories">
-
-<button class="chip active-chip">
-All
-</button>
-
-<button class="chip">
-Filipino
-</button>
-
-<button class="chip">
-Breakfast
-</button>
-
-<button class="chip">
-Dessert
-</button>
-
-<button class="chip">
-Pasta
-</button>
-
-<button class="chip">
-Salad
-</button>
-
-<button class="chip">
-Soup
-</button>
-
-</div>
-
-<div
-id="homeRecipes"
-class="recipe-grid">
-
-</div>
-
-</section>
-
-<!-- RECIPES -->
-
-<section
-id="recipesScreen"
-class="screen">
-
-<h1>All Recipes</h1>
-
-<p id="recipeCount"></p>
-
-<input
-type="text"
-id="recipeSearch"
-placeholder="Search recipes...">
-
-<div
-id="recipeGrid"
-class="recipe-grid">
-
-</div>
-
-</section>
-
-<!-- FAVORITES -->
-
-<section
-id="favoritesScreen"
-class="screen">
-
-<h1>Favorites</h1>
-
-<p>Your saved recipes</p>
-
-<div
-id="favoritesGrid"
-class="recipe-grid">
-
-</div>
-
-</section>
-
-<!-- PLANNER -->
-
-<section
-id="plannerScreen"
-class="screen">
-
-<h1>Plan Your Week</h1>
-
-<p>
-Organize your meals
-for the week
-</p>
-
-<div id="weeklyPlanner">
-
-</div>
-
-</section>
-
-<!-- SHOPPING -->
-
-<section
-id="shoppingScreen"
-class="screen">
-
-<h1>Shopping List</h1>
-
-<input
-type="text"
-id="shoppingInput"
-placeholder="Add ingredient...">
-
-<button id="addItemBtn">
-Add
-</button>
-
-<ul id="shoppingList">
-
-</ul>
-
-</section>
-
-<!-- BOTTOM NAV -->
-
-<nav class="bottom-nav">
-
-<button data-screen="homeScreen">
-🏠
-<span>Home</span>
-</button>
-
-<button data-screen="recipesScreen">
-🍽
-<span>Recipes</span>
-</button>
-
-<button data-screen="favoritesScreen">
-❤️
-<span>Favorites</span>
-</button>
-
-<button data-screen="plannerScreen">
-📅
-<span>Plan</span>
-</button>
-
-<button data-screen="shoppingScreen">
-🛒
-<span>Shopping</span>
-</button>
-
-</nav>
-
-</div>
-
-<script src="recipes.js"></script>
-<script src="app.js"></script>
-
+  <script type="module" src="app.js"></script>
 </body>
 </html>
