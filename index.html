@@ -1,1 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RecipeHub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<div class="sidebar">
+  <h2>RecipeHub</h2>
+
+  <div class="nav-item">Home</div>
+  <div class="nav-item">Recipes</div>
+  <div class="nav-item">Favorites</div>
+  <div class="nav-item">Plan</div>
+  <div class="nav-item">Shopping</div>
+</div>
+
+<div class="main">
+
+  <h2>Discover</h2>
+  <input id="search" class="search" placeholder="Search recipes...">
+
+  <div class="featured">
+    <div class="feature">All</div>
+    <div class="feature">Pasta</div>
+    <div class="feature">Healthy</div>
+    <div class="feature">Dessert</div>
+    <div class="feature">Filipino</div>
+  </div>
+
+  <div id="container" class="grid"></div>
+
+</div>
+
+<script src="recipes.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
