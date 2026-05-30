@@ -1,134 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RecipeHub</title>
-  <link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RecipeHub</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
 </head>
+
 <body>
 
-<header class="navbar">
-  <h1>🍳 RecipeHub</h1>
+<div class="app">
 
-  <nav>
-    <button class="nav-btn" data-section="home">Home</button>
-    <button class="nav-btn" data-section="recipes">Recipes</button>
-    <button class="nav-btn" data-section="favorites">Favorites</button>
-    <button class="nav-btn" data-section="planner">Meal Planner</button>
-    <button class="nav-btn" data-section="shopping">Shopping List</button>
-  </nav>
+<!-- HOME -->
 
-  <button id="darkModeBtn">🌙</button>
+<section id="homeScreen" class="screen active">
+
+<header class="hero">
+
+<h1>Discover</h1>
+
+<p>Find your next favorite recipe</p>
+
 </header>
 
-<main>
+<div class="search-container">
 
-  <!-- HOME -->
-  <section id="home" class="page active">
-    <div class="hero">
-      <h2>Discover Delicious Recipes</h2>
-      <p>Plan meals, save favorites, and explore cuisines.</p>
+<input
+type="text"
+id="searchInput"
+placeholder="Search recipes...">
 
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="Search recipes..."
-      >
-    </div>
-  </section>
+</div>
 
-  <!-- RECIPES -->
-  <section id="recipes" class="page">
+<h3 class="section-title">
+FEATURED CATEGORY
+</h3>
 
-    <div class="filters">
-      <select id="categoryFilter">
-        <option value="All">All Categories</option>
-        <option value="Filipino">Filipino</option>
-        <option value="Breakfast">Breakfast</option>
-        <option value="Dessert">Dessert</option>
-        <option value="Pasta">Pasta</option>
-        <option value="Salad">Salad</option>
-        <option value="Soup">Soup</option>
-      </select>
-    </div>
+<div class="featured-card">
 
-    <div id="recipeContainer" class="recipe-grid"></div>
-  </section>
+<div class="featured-overlay">
 
-  <!-- FAVORITES -->
-  <section id="favorites" class="page">
-    <h2>❤️ Favorite Recipes</h2>
-    <div id="favoritesContainer" class="recipe-grid"></div>
-  </section>
+<h2>Filipino Food</h2>
 
-  <!-- MEAL PLANNER -->
-  <section id="planner" class="page">
-    <h2>📅 Meal Planner</h2>
+</div>
 
-    <div class="meal-slots">
-      <div>
-        <h3>Breakfast</h3>
-        <select id="breakfastSelect"></select>
-      </div>
+</div>
 
-      <div>
-        <h3>Lunch</h3>
-        <select id="lunchSelect"></select>
-      </div>
+<h3 class="section-title">
+ALL CATEGORIES
+</h3>
 
-      <div>
-        <h3>Dinner</h3>
-        <select id="dinnerSelect"></select>
-      </div>
-    </div>
+<div class="categories">
 
-    <button id="saveMealPlan">Save Meal Plan</button>
-  </section>
+<button class="chip active-chip">
+All
+</button>
 
-  <!-- SHOPPING -->
-  <section id="shopping" class="page">
-    <h2>🛒 Shopping List</h2>
+<button class="chip">
+Filipino
+</button>
 
-    <input
-      type="text"
-      id="shoppingInput"
-      placeholder="Add ingredient"
-    >
+<button class="chip">
+Breakfast
+</button>
 
-    <button id="addShoppingItem">
-      Add
-    </button>
+<button class="chip">
+Dessert
+</button>
 
-    <ul id="shoppingList"></ul>
-  </section>
+<button class="chip">
+Pasta
+</button>
 
-</main>
+<button class="chip">
+Salad
+</button>
 
-<!-- MODAL -->
-<div id="recipeModal" class="modal hidden">
+<button class="chip">
+Soup
+</button>
 
-  <div class="modal-content">
+</div>
 
-    <span id="closeModal">&times;</span>
+<div
+id="homeRecipes"
+class="recipe-grid">
 
-    <img id="modalImage" alt="Recipe">
+</div>
 
-    <h2 id="modalTitle"></h2>
+</section>
 
-    <div id="modalMeta"></div>
+<!-- RECIPES -->
 
-    <h3>Ingredients</h3>
-    <ul id="modalIngredients"></ul>
+<section
+id="recipesScreen"
+class="screen">
 
-    <h3>Instructions</h3>
-    <ol id="modalInstructions"></ol>
+<h1>All Recipes</h1>
 
-    <button id="favoriteBtn">
-      ❤️ Add to Favorites
-    </button>
+<p id="recipeCount"></p>
 
-  </div>
+<input
+type="text"
+id="recipeSearch"
+placeholder="Search recipes...">
+
+<div
+id="recipeGrid"
+class="recipe-grid">
+
+</div>
+
+</section>
+
+<!-- FAVORITES -->
+
+<section
+id="favoritesScreen"
+class="screen">
+
+<h1>Favorites</h1>
+
+<p>Your saved recipes</p>
+
+<div
+id="favoritesGrid"
+class="recipe-grid">
+
+</div>
+
+</section>
+
+<!-- PLANNER -->
+
+<section
+id="plannerScreen"
+class="screen">
+
+<h1>Plan Your Week</h1>
+
+<p>
+Organize your meals
+for the week
+</p>
+
+<div id="weeklyPlanner">
+
+</div>
+
+</section>
+
+<!-- SHOPPING -->
+
+<section
+id="shoppingScreen"
+class="screen">
+
+<h1>Shopping List</h1>
+
+<input
+type="text"
+id="shoppingInput"
+placeholder="Add ingredient...">
+
+<button id="addItemBtn">
+Add
+</button>
+
+<ul id="shoppingList">
+
+</ul>
+
+</section>
+
+<!-- BOTTOM NAV -->
+
+<nav class="bottom-nav">
+
+<button data-screen="homeScreen">
+🏠
+<span>Home</span>
+</button>
+
+<button data-screen="recipesScreen">
+🍽
+<span>Recipes</span>
+</button>
+
+<button data-screen="favoritesScreen">
+❤️
+<span>Favorites</span>
+</button>
+
+<button data-screen="plannerScreen">
+📅
+<span>Plan</span>
+</button>
+
+<button data-screen="shoppingScreen">
+🛒
+<span>Shopping</span>
+</button>
+
+</nav>
 
 </div>
 
