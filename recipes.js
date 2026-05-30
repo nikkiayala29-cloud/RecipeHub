@@ -1,49 +1,17 @@
 const RECIPES = [
-  {
-    id: 1,
-    name: "Spaghetti Bolognese",
-    category: "Pasta",
-    cuisine: "Italian",
-    time: "60 min",
-    image: "https://source.unsplash.com/800x600/?spaghetti",
-    desc: "Classic Italian meat pasta sauce.",
-    ingredients: ["Pasta", "Beef", "Tomato sauce"],
-    steps: ["Boil pasta", "Cook beef", "Simmer sauce"]
-  },
-  {
-    id: 2,
-    name: "Chicken Adobo",
-    category: "Filipino",
-    cuisine: "Asian",
-    time: "45 min",
-    image: "https://source.unsplash.com/800x600/?chicken",
-    desc: "Savory Filipino chicken stew.",
-    ingredients: ["Chicken", "Soy sauce", "Vinegar"],
-    steps: ["Marinate", "Simmer until tender"]
-  },
-  {
-    id: 3,
-    name: "Cheeseburger",
-    category: "Fast Food",
-    cuisine: "American",
-    time: "20 min",
-    image: "https://source.unsplash.com/800x600/?burger",
-    desc: "Juicy grilled burger with cheese.",
-    ingredients: ["Bun", "Beef patty", "Cheese"],
-    steps: ["Grill patty", "Assemble burger"]
-  }
+  { id: 1, name: "Spaghetti Bolognese", category: "Pasta", time: 60, image: "https://source.unsplash.com/800x600/?spaghetti", ingredients: ["Pasta","Beef","Tomato"], steps: ["Boil pasta","Cook beef","Mix sauce"] },
+  { id: 2, name: "Chicken Adobo", category: "Filipino", time: 45, image: "https://source.unsplash.com/800x600/?chicken", ingredients: ["Chicken","Soy sauce","Vinegar"], steps: ["Marinate","Simmer"] },
+  { id: 3, name: "Burger", category: "Fast Food", time: 20, image: "https://source.unsplash.com/800x600/?burger", ingredients: ["Bun","Beef","Cheese"], steps: ["Cook patty","Assemble"] }
 ];
 
-// auto-expand to 40 premium placeholders (safe fallback system)
+// auto-fill remaining 37 recipes
 for (let i = 4; i <= 40; i++) {
   RECIPES.push({
     id: i,
-    name: `Gourmet Recipe ${i}`,
+    name: `Chef Recipe ${i}`,
     category: i % 2 ? "Main Dish" : "Dessert",
-    cuisine: "International",
-    time: "30 min",
-    image: "https://source.unsplash.com/800x600/?food,meal",
-    desc: "Premium curated recipe for your collection.",
+    time: 30,
+    image: "https://source.unsplash.com/800x600/?food",
     ingredients: ["Ingredient A", "Ingredient B"],
     steps: ["Step 1", "Step 2"]
   });
