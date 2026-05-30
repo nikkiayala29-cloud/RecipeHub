@@ -1,22 +1,20 @@
+let favorites = [];
+
 const container = document.getElementById("container");
 const search = document.getElementById("search");
 
-function render(list) {
+// RENDER APP
+function render(data){
   container.innerHTML = "";
 
-  list.forEach(r => {
+  data.forEach(r=>{
     container.innerHTML += `
-      <div class="card">
-        <img src="${r.image}">
+      <div class="card" onclick="viewRecipe(${r.id})">
+        <img src="${r.img}">
         <div class="card-content">
           <h3>${r.name}</h3>
-          <p>${r.desc}</p>
-
-          <div class="meta">
-            <span>⏱ ${r.time}</span>
-            <span>⭐ ${r.rating}</span>
-            <span>🔥 ${r.calories}</span>
-          </div>
+          <p>${r.category}</p>
+          <small>⭐ ${r.rating} | ${r.time} | 🔥 ${r.cal}</small>
         </div>
       </div>
     `;
@@ -24,12 +22,18 @@ function render(list) {
 }
 
 // SEARCH
-search.addEventListener("input", e => {
-  const filtered = RECIPES.filter(r =>
+search.addEventListener("input",(e)=>{
+  const filtered = RECIPES.filter(r=>
     r.name.toLowerCase().includes(e.target.value.toLowerCase())
   );
   render(filtered);
 });
+
+// VIEW (REAL APP STYLE)
+function viewRecipe(id){
+  const r = RECIPES.find(x=>x.id===id);
+  alert(`${r.name}\n\n${r.desc || "No description available"}`);
+}
 
 // INIT
 render(RECIPES);
