@@ -3,52 +3,46 @@ const RECIPES = [
     id: 1,
     name: "Spaghetti Bolognese",
     category: "Pasta",
-    cuisine: "Italian",
-    prepTime: 15,
-    cookTime: 60,
-    image: "https://source.unsplash.com/400x300/?spaghetti",
-    ingredients: ["Pasta", "Beef", "Tomato sauce"],
-    instructions: ["Cook pasta", "Cook beef", "Mix sauce"]
+    image: "https://source.unsplash.com/600x400/?spaghetti",
+    time: "60 mins",
   },
   {
     id: 2,
     name: "Chicken Adobo",
     category: "Filipino",
-    cuisine: "Filipino",
-    prepTime: 10,
-    cookTime: 45,
-    image: "https://source.unsplash.com/400x300/?chicken",
-    ingredients: ["Chicken", "Soy sauce", "Vinegar"],
-    instructions: ["Marinate", "Simmer"]
+    image: "https://source.unsplash.com/600x400/?chicken-adobo",
+    time: "45 mins",
   },
   {
     id: 3,
-    name: "Burger",
+    name: "Cheeseburger",
     category: "Fast Food",
-    cuisine: "American",
-    prepTime: 10,
-    cookTime: 10,
-    image: "https://source.unsplash.com/400x300/?burger",
-    ingredients: ["Bun", "Beef", "Cheese"],
-    instructions: ["Cook patty", "Assemble"]
+    image: "https://source.unsplash.com/600x400/?burger",
+    time: "20 mins",
   },
-
-  // 🔥 AUTO EXPANDED FULL 40 SET
+  {
+    id: 4,
+    name: "Sushi",
+    category: "Japanese",
+    image: "https://source.unsplash.com/600x400/?sushi",
+    time: "50 mins",
+  },
+  {
+    id: 5,
+    name: "Pancakes",
+    category: "Breakfast",
+    image: "https://source.unsplash.com/600x400/?pancakes",
+    time: "20 mins",
+  }
 ];
 
-// auto-generate remaining 37 recipes so nothing breaks visually
-for (let i = 4; i <= 40; i++) {
+// auto-fill to 40 (so UI is not empty)
+for (let i = 6; i <= 40; i++) {
   RECIPES.push({
     id: i,
     name: "Recipe " + i,
     category: i % 2 === 0 ? "Main Dish" : "Dessert",
-    cuisine: "Global",
-    prepTime: 10,
-    cookTime: 20,
-    image: "https://source.unsplash.com/400x300/?food",
-    ingredients: ["Ingredient A", "Ingredient B"],
-    instructions: ["Step 1", "Step 2"]
+    image: "https://source.unsplash.com/600x400/?food",
+    time: "30 mins"
   });
 }
-
-export default RECIPES;
