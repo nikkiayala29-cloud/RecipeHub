@@ -1,32 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>RecipeHub</title>
+  <title>Recipe App</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>🍽 RecipeHub</h1>
+<h1>RecipeHub 🍽</h1>
 
-    <input type="text" id="searchInput" placeholder="Search recipes...">
-  </header>
+<div id="recipeContainer"></div>
 
-  <main>
+<script src="recipes.js"></script>
+<script src="app.js"></script>
 
-    <section id="recipeContainer"></section>
-
-  </main>
-
-  <!-- MODAL -->
-  <div id="recipeModal" class="modal hidden">
-    <div class="modal-content">
-      <span id="closeModal">X</span>
-      <div id="modalBody"></div>
-    </div>
-  </div>
-
-  <script type="module" src="app.js"></script>
 </body>
 </html>
