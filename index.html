@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Recipe App</title>
+  <title>RecipeHub Premium</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>RecipeHub 🍽</h1>
+<header>
+  <h1>🍽 RecipeHub Premium</h1>
+  <input id="search" placeholder="Search recipes...">
+</header>
 
-<div id="recipeContainer"></div>
+<div id="filters">
+  <div class="filter">All</div>
+  <div class="filter">Pasta</div>
+  <div class="filter">Filipino</div>
+  <div class="filter">Dessert</div>
+  <div class="filter">Fast Food</div>
+</div>
+
+<div id="container"></div>
+
+<div id="modal" class="modal">
+  <div class="modal-content" id="modalContent"></div>
+</div>
 
 <script src="recipes.js"></script>
 <script src="app.js"></script>
