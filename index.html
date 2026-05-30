@@ -1,1 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RecipeHub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<header class="navbar">
+  <h1>🍳 RecipeHub</h1>
+
+  <nav>
+    <button class="nav-btn" data-section="home">Home</button>
+    <button class="nav-btn" data-section="recipes">Recipes</button>
+    <button class="nav-btn" data-section="favorites">Favorites</button>
+    <button class="nav-btn" data-section="planner">Meal Planner</button>
+    <button class="nav-btn" data-section="shopping">Shopping List</button>
+  </nav>
+
+  <button id="darkModeBtn">🌙</button>
+</header>
+
+<main>
+
+  <!-- HOME -->
+  <section id="home" class="page active">
+    <div class="hero">
+      <h2>Discover Delicious Recipes</h2>
+      <p>Plan meals, save favorites, and explore cuisines.</p>
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search recipes..."
+      >
+    </div>
+  </section>
+
+  <!-- RECIPES -->
+  <section id="recipes" class="page">
+
+    <div class="filters">
+      <select id="categoryFilter">
+        <option value="All">All Categories</option>
+        <option value="Filipino">Filipino</option>
+        <option value="Breakfast">Breakfast</option>
+        <option value="Dessert">Dessert</option>
+        <option value="Pasta">Pasta</option>
+        <option value="Salad">Salad</option>
+        <option value="Soup">Soup</option>
+      </select>
+    </div>
+
+    <div id="recipeContainer" class="recipe-grid"></div>
+  </section>
+
+  <!-- FAVORITES -->
+  <section id="favorites" class="page">
+    <h2>❤️ Favorite Recipes</h2>
+    <div id="favoritesContainer" class="recipe-grid"></div>
+  </section>
+
+  <!-- MEAL PLANNER -->
+  <section id="planner" class="page">
+    <h2>📅 Meal Planner</h2>
+
+    <div class="meal-slots">
+      <div>
+        <h3>Breakfast</h3>
+        <select id="breakfastSelect"></select>
+      </div>
+
+      <div>
+        <h3>Lunch</h3>
+        <select id="lunchSelect"></select>
+      </div>
+
+      <div>
+        <h3>Dinner</h3>
+        <select id="dinnerSelect"></select>
+      </div>
+    </div>
+
+    <button id="saveMealPlan">Save Meal Plan</button>
+  </section>
+
+  <!-- SHOPPING -->
+  <section id="shopping" class="page">
+    <h2>🛒 Shopping List</h2>
+
+    <input
+      type="text"
+      id="shoppingInput"
+      placeholder="Add ingredient"
+    >
+
+    <button id="addShoppingItem">
+      Add
+    </button>
+
+    <ul id="shoppingList"></ul>
+  </section>
+
+</main>
+
+<!-- MODAL -->
+<div id="recipeModal" class="modal hidden">
+
+  <div class="modal-content">
+
+    <span id="closeModal">&times;</span>
+
+    <img id="modalImage" alt="Recipe">
+
+    <h2 id="modalTitle"></h2>
+
+    <div id="modalMeta"></div>
+
+    <h3>Ingredients</h3>
+    <ul id="modalIngredients"></ul>
+
+    <h3>Instructions</h3>
+    <ol id="modalInstructions"></ol>
+
+    <button id="favoriteBtn">
+      ❤️ Add to Favorites
+    </button>
+
+  </div>
+
+</div>
+
+<script src="recipes.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
